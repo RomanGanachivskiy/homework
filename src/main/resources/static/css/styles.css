@@ -1,0 +1,36 @@
+html {
+	font-size:0.9rem !important;
+}
+
+.tm_breadcrumb_style {
+	background-color: transparent !important;
+	padding: 0 0 0 30px !important;
+	margin: 0 !important;
+}
+
+div.background-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 15%;
+  min-height: 150px;
+  width: 100vw;
+  background-color:rgba(19, 70, 173, 0.9);
+  z-index:-1;
+}
+
+.header-title {
+	color: white;
+}
+
+body {
+	background-color: #edf2f7 !important;
+}
+
+div.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.addAgentBtnShadow {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

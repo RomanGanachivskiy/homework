@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>All Persons</h1>
+<div sec:authorize="hasAnyAuthority('ADMIN')">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Active</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person: ${persons}">
+            <td th:text="${person.firstName}" />
+            <td th:text="${person.lastName}" />
+            <td th:text="${person.email}" />
+            <td th:text="${person.password}" />
+            <td th:text="${person.active}" />
+            <td th:text="${person.role}" />
+        </tr>
+        </tbody>
+    </table>
+</div>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout" />
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+  <title>Cabinet</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Person</h1>
+<div>
+  <p th:text="'Email: ' + ${person.email}" />
+  <p th:text="'First Name: ' + ${person.firstName}" />
+  <p th:text="'Last Name: ' + ${person.lastName}" />
+  <p th:text="'Password: ' + ${person.password}" />
+  <p th:text="'Role: ' + ${person.role}" />
+</div>
+<form th:action="@{/logout}" method="post">
+  <input type="submit" value="Logout" />
+</form>
+</body>
+</html>

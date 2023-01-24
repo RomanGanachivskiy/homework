@@ -1,0 +1,2 @@
+insert into persons (id, email, first_name, last_name, password, role, active) values (1, 'dubilok7@gmail.com', 'Taras', 'Dubil', '{bcrypt}$2a$10$pXho7B1ZdzHK8rv2PmjemuDtkRsfWh/7qn6mhB2FddqWXnILt1Awm', 'ADMIN', true); --admin password
+insert into persons (id, email, first_name, last_name, password, role, active) values (2, 'ganic@gmail.com', 'Roman', 'Ganic', '{bcrypt}$2a$10$qZdOsprknsCHhsmLW8idoOtlaBuj9z/FsnGljR..2QDQTmHidYGL6', 'USER', true); --test password

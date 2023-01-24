@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous" />
+    <style>
+        #loginForm {
+            background-color: #e8e7e3;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .notification {
+            border-radius: 15px;
+            background-color: #f0c3c0;
+            color: #bd2e22;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .hideDisplay {
+            display: none;
+        }
+
+        .close-button {
+            border: 0;
+            -webkit-appearance: none;
+            /* font-size: 1.7rem; */
+            font-weight: bolder;
+            color: #bd2e22;
+            text-shadow: 0 1px 0 #fff;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-10 offset-1 text-center">
+                <div class="text-center ">
+                    <h2>Login</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-2 col-8">
+                <hr>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="row">
+    <div class="col-5 offset-3">
+        <form id="loginForm" method="post" th:action="@{/login}">
+            <div class="form-group">
+                <label for="user">User Email</label> <input type="text"
+                                                            class="form-control" id="user" name="username"
+                                                            placeholder="Enter User Email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label> <input type="password"
+                                                              class="form-control" id="password" name="password"
+                                                              placeholder="Password">
+            </div>
+            <input type="submit" class="mt-2 btn btn-secondary" value="Sign in"/>
+
+        </form>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-2 offset-7">
+        <a class="btn btn-link" th:href="@{/registration}">Register</a>
+    </div>
+</div>
+
+</body>
+</html>
