@@ -15,9 +15,8 @@ import java.io.IOException;
 @Component
 public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHandler {
 
-    private static final String CABINET_URL = "/cabinet/%s";
+    private static final String CABINET_URL = "/cabinet";
     private static final String ADMIN_URL = "/admin";
-
     private static final String LOGIN_URL = "/login";
 
     @Autowired
@@ -35,8 +34,7 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
             if (person.getRole().equals(Role.ADMIN)) {
                 redirectStrategy.sendRedirect(request, response, ADMIN_URL);
             } else {
-                var cabinetUrl = String.format(CABINET_URL, person.getId());
-                redirectStrategy.sendRedirect(request, response, cabinetUrl);
+                redirectStrategy.sendRedirect(request, response, CABINET_URL);
             }
         } catch (Exception e) {
             redirectStrategy.sendRedirect(request, response, LOGIN_URL);

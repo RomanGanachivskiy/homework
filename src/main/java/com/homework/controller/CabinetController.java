@@ -1,7 +1,9 @@
 package com.homework.controller;
 
+import com.homework.security.MyPersonDetails;
 import com.homework.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,10 +17,11 @@ public class CabinetController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String getPersonCabinet(@PathVariable String id, Model model) {
-        var personId = Long.valueOf(id);
-        var person = personService.getPersonById(personId);
+    @RequestMapping(method = RequestMethod.GET)
+    public String getPersonCabinet(Model model) {
+               var auth = SecurityContextHolder.getContext().getAuthentication();
+               var authUserName = ((MyPersonDetails) auth.getPrincipal()).getUsername();
+               var person = personService.getPersonByEmail(authUserName);
         model.addAttribute("person", person);
         return "cabinet";
     }
